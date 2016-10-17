@@ -19,9 +19,10 @@ public class Parser {
     public String upToHash(String input){
         String rawStub = "";
         String[] rawArray = raw.split("##");
+        String section1 = rawArray[0];
         for(int i = 0; i < rawArray.length; i++){
             rawStub += rawArray[i];
         }
-        return rawStub;
+        return section1;
     }
 }
