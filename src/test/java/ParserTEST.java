@@ -15,12 +15,18 @@ public class ParserTEST {
     }
 
     @Test
-    public void hashSpace() throws Exception {
+    public void hashSpaceTest() throws Exception {
         Parser parser = new Parser();
         Main main = new Main();
         String raw = main.readRawDataToString();
-        String expected = "naMe:Milk;price:3.23;type:Food;expiration:1/25/2016";
+        String expected = "naME:BreaD;price:1.23;type:Food;expiration:1/02/2016";
         String actual = parser.upToHash(raw);
         assertEquals("The string should be one element long" , expected, actual);
+    }
+
+    @Test
+    public void listAllTest() throws Exception {
+        Parser parser = new Parser();
+        String expected = "naMe:Milk;price:3.23;type:Food;expiration:1/25/2016\nnaME:BreaD;price:1.23;type:Food;expiration:1/02/2016";
     }
 }

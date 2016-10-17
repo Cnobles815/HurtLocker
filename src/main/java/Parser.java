@@ -4,7 +4,8 @@
 public class Parser {
     Main main = new Main();
     String raw = main.readRawDataToString();
-    String altered;
+    String[] altered;
+
 
     int  newlineCount = 0;
 
@@ -17,12 +18,13 @@ public class Parser {
     }
 
     public String upToHash(String input){
-        String rawStub = "";
-        String[] rawArray = raw.split("##");
-        String section1 = rawArray[0];
-        for(int i = 0; i < rawArray.length; i++){
-            rawStub += rawArray[i];
-        }
-        return section1;
+        altered = input.split("##");
+        String section1 = altered[0];
+        String section2 = altered[1];
+        return section2;
+    }
+
+    public String listAll(String[] toList){
+        return altered[0] +"\n" + altered[1];
     }
 }
