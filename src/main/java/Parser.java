@@ -21,14 +21,7 @@ public class Parser {
         String[] rawArray = raw.split("##");
         for(int i = 0; i < rawArray.length; i++){
             rawStub += rawArray[i];
-            if(rawArray[i].equals("#")){
-                rawStub += "\n";
-            }
         }
         return rawStub;
     }
-
-
-
-
 }
